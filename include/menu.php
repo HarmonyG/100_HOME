@@ -2,12 +2,6 @@
 <!-- Corps -->
     <div id="contenu">
 
-
-<!-- TEST -->
-
-test
-
-
 <!-- Menu -->
 
 <nav>
