@@ -7,7 +7,7 @@ echo '<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>A faire: mettre un carro
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>';
 
 
-echo 'modif';
+echo 'MA MODIF HARMONY;
 
 include ("include/footer.php");
 ?>
