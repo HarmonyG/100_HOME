@@ -2,6 +2,12 @@
 <!-- Corps -->
     <div id="contenu">
 
+
+<!-- TEST -->
+
+
+
+
 <!-- Menu -->
 
 <nav>
@@ -42,7 +48,8 @@
               <li><a href="/administration/suppression_user_BDD_tableau.php">Suppression d'un utilisateur</a></li>
               <li><a href="/actualites/insertion_actualites_BDD.php">Insertion d'une actualité</a></li>
               <li><a href="/actualites/modification_actualites_BDD_tableau.php">Modification d'une actualité</a></li>           
-              <li><a href="/actualites/suppression_actualites_BDD_tableau.php">Suppression d'une actualité</a></li>
+              <li><a href="/actualites/suppression_actualites_BDD_tableau.php">Suppression d'une actualité</a></li>-->            
+            </ul>
           </li>
 
     <?php
