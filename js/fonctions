@@ -1,0 +1,10 @@
+
+<script language="javascript">
+function verification() {
+  if ( (document.forms.inscription.email.value !="") && (document.forms.inscription.email.value.indexOf("@") !="-1") && (document.forms.inscription.email.value.indexOf(".") !="-1")){
+    alert("Email semble valide"); 
+  }else {
+    alert("Email semble invalide");
+  } 
+}
+</script>

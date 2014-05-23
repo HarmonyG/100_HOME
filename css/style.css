@@ -1,0 +1,250 @@
+/*Reset CSS*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: solid 1px;
+}
+
+td{
+    border: solid 1px;
+}
+
+tr{
+    border: solid 1px;
+}
+/* apply a natural box layout model to all elements */
+*, *:before, *:after {
+  -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+ }
+
+/*Styles perso*/
+
+/*Styles généraux*/
+body {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+/***** En-tête ******/
+#header{
+	height:190px; 										
+/*	border:1px solid #303030; 	*/						
+	background-color: #677179;							
+}
+
+#espace_membre{
+	position:absolute; 
+	top:15px; 
+	left: 1030px; 
+}
+
+input.bouton { 
+  height: 40px; 
+  width: 250px; 
+} 
+
+
+/***** Corps ******/
+#contenu{
+	width:1024px;										
+  margin: 0 auto;
+/*	border:1px solid #303030; 	*/						
+	background-color: #C1BFB1;	
+
+}
+
+
+/***** Menu ******/
+
+nav {
+    display: block;
+    text-align: center;
+    background: #677179;
+    height:65px;
+  }
+  nav ul {
+    margin: 0;
+    padding:0;
+  }
+  .nav a {
+    display:block; 
+    background: #fff;
+    text-decoration: none;
+    padding: .8em 1.3em;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+  }
+  .nav{  
+    vertical-align: top; 
+    display: inline-block;
+    border-radius:6px;
+    margin-top: 17px;
+  }
+  .nav li{position: relative;}
+  .nav > li { 
+    float:left; 
+    border-bottom: 4px #aaa solid; 
+    margin-right: 2px;
+  } 
+  .nav > li > a { 
+    margin-bottom:1px;
+  }
+  .nav > li:hover , .nav > li:hover >a{  border-bottom-color:orange;}
+  .nav li:hover > a { color:orange; }
+  .nav > li:first-child  { border-radius: 4px 0 0 4px;} 
+  .nav > li:first-child>a{border-radius: 4px 0 0 0;}
+  .nav > li:last-child  { 
+    border-radius: 0 0 4px 0; 
+    margin-right: 0;
+  } 
+  .nav > li:last-child >a{border-radius: 0 4px 0 0; }
+  .nav li li a { border-bottom: 1px solid #aaa; }
+  
+  
+  
+    .nav li a:first-child:nth-last-child(2):before { 
+     content:""; 
+     position: absolute; 
+     height:0; 
+     width: 0; 
+     border: 5px solid transparent; 
+     top: 50% ;
+     right:5px;  
+   }
+   
+   /* submenu positioning*/
+.nav ul {
+  position: absolute;
+  white-space: nowrap;
+  border-bottom: 5px solid  orange;
+  z-index: 1;
+  left: -99999em;
+}
+.nav > li:hover > ul {
+  left: auto;
+  padding-top: 5px  ;
+  min-width: 100%;
+}
+.nav > li li ul {  border-left:1px solid #fff;}
+
+
+.nav > li li:hover > ul { 
+ /* margin-left: 1px */
+  left: 100%;
+  top: -1px;
+}
+/* arrow hover styling */
+.nav > li > a:first-child:nth-last-child(2):before { 
+  border-top-color: #aaa; 
+}
+.nav > li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent; 
+  border-bottom-color: orange; 
+  margin-top:-5px
+}
+.nav li li > a:first-child:nth-last-child(2):before {  
+  border-left-color: #aaa; 
+  margin-top: -5px
+}
+.nav li li:hover > a:first-child:nth-last-child(2):before {
+  border: 5px solid transparent; 
+  border-right-color: orange;
+  right: 10px; 
+}
+
+/***** Fin menu ******/
+table {
+
+  text-align:center;                  /*Alignement texte*/
+  margin : 10px auto auto auto;             /*Permet de positionner tableau par rapport aux marges */
+  width: 500px;                   /*Taille*/
+  border : 3px solid #454847;             /*bordure*/
+  border-spacing: 3px;                /*Espacement cellule tableau*/
+
+}
+
+td {
+  
+  border : 1px solid #7D8382;             /*bordure*/
+}
+
+
+/***** Fin Corps ******/
+
+
+
+/***** Label formulaire ******/
+label
+{
+    display: block;                                     /*balises en block*/
+    width: 250px;                                       /*largeur*/
+    float: left;                                        /*situation bloc*/
+   
+}
+/***** Fin label formulaire ******/
+
+
+
+
+/***** Pied page ******/
+footer{
+	width:auto;										
+	height:50px;																			
+	border:1px solid #303030;							
+  background-color: #677179;																															
+	text-align: center;
+  padding-top:15px;
+  margin-bottom: 20px;
+}
+/***** Fin pied page ******/
+
+
