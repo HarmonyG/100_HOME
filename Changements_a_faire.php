@@ -14,7 +14,7 @@ date sur firefox
 
 Un admin global peut rajouter un autre membre en tant qu'admninistrateur : une fois celui ci déclaré comme admninistrateur il obtient les droits correspondants.
 
-Les adoptés: à retirer.
+<!-- Les adoptés: à retirer. -->
 
 Intégrer images aux actualités
 
