@@ -12,10 +12,6 @@ Si le membre n'est pas connecté : il ne peut pas "voter"
 
 date sur firefox
 
-Un admin global peut rajouter un autre membre en tant qu'admninistrateur : une fois celui ci déclaré comme admninistrateur il obtient les droits correspondants.
-
-<!-- Les adoptés: à retirer. -->
-
 Intégrer images aux actualités
 
 //////////////////////////////////////////////////
@@ -23,7 +19,5 @@ Intégrer images aux actualités
 //////////////////////////////////////////////////
 
 Pagination à réaliser : http://antoine-herault.developpez.com/tutoriels/php/pagination-automatique-en-php/
-
-Si on fait un copié collé d'une page en administration et que l'on se déconnecte: on ne devrait plus pouvoir accéder à la page
 
 Se souvenir de moi : voir pour la connexion

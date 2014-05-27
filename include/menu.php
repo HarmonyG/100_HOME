@@ -15,7 +15,6 @@
     </li>
     <li><a href="/actualites/liste_actualites.php">Actualités</a></li>
     <li><a href="/adoptions/index.php">Adoptions</a></li>
-    <li><a href="/adoptes/index.php">Adoptés</a></li>
     <li><a href="/conseils/index.php">Conseils</a>
       <ul>
         <li><a href="/conseils/conseils_chiens.php">Vous avez adopté un chien</a></li>
@@ -40,9 +39,10 @@
               <li><a href="/administration/suppression_animaux_BDD_tableau.php">Suppression d'un animal</a></li>
               <li><a href="/administration/modif_user_BDD_tableau.php">Modification d'un utilisateur</a></li>
               <li><a href="/administration/suppression_user_BDD_tableau.php">Suppression d'un utilisateur</a></li>
-              <li><a href="/actualites/insertion_actualites_BDD.php">Insertion d'une actualité</a></li>
-              <li><a href="/actualites/modification_actualites_BDD_tableau.php">Modification d'une actualité</a></li>           
-              <li><a href="/actualites/suppression_actualites_BDD_tableau.php">Suppression d'une actualité</a></li>-->            
+              <li><a href="/administration/ajout_actualites_BDD.php">Insertion d'une actualité</a></li>
+              <li><a href="/administration/modif_actualites_BDD_tableau.php">Modification d'une actualité</a></li>           
+              <li><a href="/administration/suppression_actualites_BDD_tableau.php">Suppression d'une actualité</a></li>
+              <li><a href="/administration/ajout_administrateur_BDD_tableau.php">Ajouter un administrateur</a></li>         
             </ul>
           </li>
 

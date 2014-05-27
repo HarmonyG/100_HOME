@@ -9,31 +9,29 @@
 	if (isset($_SESSION['pseudo'])){
 		if($_SESSION['pseudo'] == "administrateur"){
 
-			// récupération des variables postées dans le formulaire
-			$id=strip_tags($_POST['id']);	
-			$pseudo= strip_tags($_POST['pseudo']);
-			$mdp= strip_tags($_POST['mdp']);
-			$sexe= strip_tags($_POST['sexe']);
-			$email= strip_tags($_POST['email']);
+			//Récupération de l'id
+			$id = $_GET['id'];
+			// Ajout en mode administrateur: un administrateur est marqué "1" dans la base de données
+			$admin = 1;
 
 			// requete de modification et envoi
-			$requete = "UPDATE utilisateurs SET id='$id',pseudo = '$pseudo', mdp = '$mdp', sexe = '$sexe', email = '$email' WHERE id = $id";
+			$requete = "UPDATE utilisateurs SET admin='$admin' WHERE id = $id";
 			$connexion->query($requete) or die ('Erreur '.$requete.' '.$connexion->error);
 
 			// Message de confirmation
-			echo '<p>Merci, l\'utilisateur '.$pseudo.' a bien été modifié</p>';
+			echo '<p>Merci, l\'utilisateur est maintenant un administrateur</p>';
 
 			// nombre d'enregistrements dans la table événement
-			$requete = "SELECT COUNT(id) as nb FROM utilisateurs";
+			$requete = "SELECT count(admin) as nb FROM utilisateurs where admin=1";
 			$result = $connexion->query($requete) or die ('Erreur '.$requete.' '.$connexion->error);
 			$ligne = $result->fetch_assoc();
 			$nb = $ligne['nb'];
 
-			echo 'Il y a maintenant '.$nb.' utilisateur(s) dans la base de données';
+			echo 'Il y a maintenant '.$nb.' administrateurs dans la base de données';
 
 			//Retour à l'accueil ou modifier un autre animal
 			echo '<p><a href="../index.php">Retourner à la page d\'acceuil</a></p>
-				  <p><a href="/administration/modif_user_BDD_tableau.php">Modifier un autre utilisateur </a></p>';
+				  <p><a href="/administration/ajout_administrateur_BDD_tableau.php">Ajouter un autre administrateur </a></p>';
 		}
 	}
 
@@ -42,6 +40,6 @@
 		header("Location: ../index.php");
 	}
 
-	//Insertion du pied de page
+	//Isertion du pied de page
 	include ("../include/footer.php");
 ?>

@@ -10,44 +10,45 @@
 		if($_SESSION['pseudo'] == "administrateur"){
 			
 			// Récupération des données dans un tableau
-			$requete = 'SELECT * FROM utilisateurs order by id desc';
+			$requete = 'SELECT * FROM actualites order by id desc';
 			$result = $connexion->query($requete) or die ('Erreur '.$requete.' '.$connexion->error);
 
 			// Récupération de l'âge que l'on convertit en nombre d'années si les mois sont supérieurs à 11 mois
 			while ($ligne = $result->fetch_assoc()) {	
-				
+
 				//Affichage titres
 				echo '<table>
 				<tr>
-					<th>Id</th>
-					<th>Nom utilisateur</th>
-					<th>Mot de passe</th>
-					<th>Sexe</th>
-					<th>Email</th>
+					<th>Titre</th>
+					<th>Texte</th>
+					<th>Auteur</th>
+					<th>date</th>
+					<th>Compteur</th>
 					<th>Modification</th>
 				</tr>';
 
 				//Affichage données
 				echo '
 					<tr>
-						<td>'.$ligne['id'].'</td>
-						<td>'.$ligne['pseudo'].'</td>
-						<td>'.$ligne['mdp'].'</td>
-						<td>'.$ligne['sexe'].'</td>
-						<td>'.$ligne['email'].'</td>
-						<td><button type="button" onclick="location.href=\'modif_user_BDD.php?id='.$ligne['id'].'\'">Modifier</button></td>
+						<td>'.$ligne['titre'].'</td>
+						<td>'.$ligne['texte'].'</td>
+						<td>'.$ligne['auteur'].'</td>
+						<td>'.$ligne['date'].'</td>
+						<td>'.$ligne['compteur'].'</td>
+						<td><button type="button" onclick="location.href=\'modif_actualites_BDD.php?id='.$ligne['id'].'\'">Modifier</button></td>
 					</tr>';
 			}
 
-			echo '</table>';
+				echo '</table>';
 
 		}
 	}
+
 	//Si ce n'est pas un administrateur: redirection vers l'accueil
 	else{
 		header("Location: ../index.php");
 	}
-
+	
 	//Insertion du pied de page
 	include ("../include/footer.php");
 ?>

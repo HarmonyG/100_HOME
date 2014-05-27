@@ -1,44 +1,54 @@
 <!-- A FAIRE : PAGINATION -->
 
-
 <!-- Insertion des include: en-tête, du menu et de la connexion -->
 <?php
-include ("../include/header.php");
-include ("../include/menu.php");
-include ("../include/connexion.php");
+	include ("../include/header.php");
+	include ("../include/menu.php");
+	include ("../include/connexion.php");
 
-// Récupération des données dans un tableau
-$requete = 'SELECT * FROM utilisateurs';
-$result = $connexion->query($requete) or die ('Erreur '.$requete.' '.$connexion->error);
+	// Si l'utilisateur est administrateur il pourra accéder ces pages sinon non : sécuriser si on entre le lien hors admin
+	if (isset($_SESSION['pseudo'])){
+		if($_SESSION['pseudo'] == "administrateur"){
+	
+			// Récupération des données dans un tableau
+			$requete = 'SELECT * FROM utilisateurs';
+			$result = $connexion->query($requete) or die ('Erreur '.$requete.' '.$connexion->error);
 
-// Récupération de l'âge que l'on convertit en nombre d'années si les mois sont supérieurs à 11 mois
-while ($ligne = $result->fetch_assoc()) {	
+			// Récupération de l'âge que l'on convertit en nombre d'années si les mois sont supérieurs à 11 mois
+			while ($ligne = $result->fetch_assoc()) {	
 
-//Affichage titres
-echo '<table>
-<tr>
-	<th>Id</th>
-	<th>Nom utilisateur</th>
-	<th>Mot de passe</th>
-	<th>Sexe</th>
-	<th>Email</th>
-	<th>Suppression</th>
-	</tr>';
+				//Affichage titres
+				echo '<table>
+				<tr>
+					<th>Id</th>
+					<th>Nom utilisateur</th>
+					<th>Mot de passe</th>
+					<th>Sexe</th>
+					<th>Email</th>
+					<th>Suppression</th>
+					</tr>';
 
-//Affichage données
-echo '
-	<tr>
-		<td>'.$ligne['id'].'</td>
-		<td>'.$ligne['pseudo'].'</td>
-		<td>'.$ligne['mdp'].'</td>
-		<td>'.$ligne['sexe'].'</td>
-		<td>'.$ligne['email'].'</td>
-		<td><button type="button" onclick="location.href=\'msuppression_user_BDD.php?id='.$ligne['id'].'\'">Suppression</button></td>
-	</tr>';
-}
+				//Affichage données
+				echo '
+					<tr>
+						<td>'.$ligne['id'].'</td>
+						<td>'.$ligne['pseudo'].'</td>
+						<td>'.$ligne['mdp'].'</td>
+						<td>'.$ligne['sexe'].'</td>
+						<td>'.$ligne['email'].'</td>
+						<td><button type="button" onclick="location.href=\'suppression_user_BDD.php?id='.$ligne['id'].'\'">Suppression</button></td>
+					</tr>';
+				}
 
-echo '</table>';
+				echo '</table>';
+		}
+	}
 
-//Insertion du pied de page
-include ("../include/footer.php");
+	//Si ce n'est pas un administrateur: redirection vers l'accueil
+	else{
+		header("Location: ../index.php");
+	}
+
+	//Insertion du pied de page
+	include ("../include/footer.php");
 ?>
